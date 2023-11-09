@@ -4,19 +4,24 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage, Vcl.Buttons;
 
 type
   TfrmLogin = class(TForm)
-    Panel1: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Panel2: TPanel;
-    Label3: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Label4: TLabel;
-    Button1: TButton;
+    pnlLogin: TPanel;
+    lblLogin: TLabel;
+    lblSenha: TLabel;
+    pnlLateralLogin: TPanel;
+    lblTitulo: TLabel;
+    edtLogin: TEdit;
+    edtSenha: TEdit;
+    lblVersao: TLabel;
+    btnEntrar: TButton;
+    imgLateralLogin: TImage;
+    SpeedButton1: TSpeedButton;
+    procedure btnEntrarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,5 +34,20 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uMenu;
+
+procedure TfrmLogin.btnEntrarClick(Sender: TObject);
+begin
+if (edtLogin.Text = 'Supervisor') and (edtSenha.Text = 'c3i9e5!#') then
+  frmMenu := TfrmMenu.Create(self);
+  frmLogin.Hide;
+  frmMenu.Show;
+end;
+
+procedure TfrmLogin.SpeedButton1Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
 
 end.
