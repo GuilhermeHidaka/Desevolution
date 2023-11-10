@@ -10,6 +10,7 @@ object frmMenu: TfrmMenu
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   TextHeight = 15
   object pnlBackground: TPanel
     Left = 0
@@ -2148,6 +2149,7 @@ object frmMenu: TfrmMenu
       Width = 23
       Height = 22
       Caption = 'X'
+      Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
       Font.Height = -16
@@ -2214,14 +2216,14 @@ object frmMenu: TfrmMenu
         ParentFont = False
         TabOrder = 2
       end
-      object btnClientes: TBitBtn
+      object btnParceiros: TBitBtn
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 114
         Height = 41
         Align = alTop
-        Caption = '[CLIENTES]'
+        Caption = '[PARCEIROS]'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -2229,6 +2231,7 @@ object frmMenu: TfrmMenu
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 3
+        OnClick = btnParceirosClick
       end
       object BitBtn1: TBitBtn
         AlignWithMargins = True

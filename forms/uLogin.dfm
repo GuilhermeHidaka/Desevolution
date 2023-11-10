@@ -3,26 +3,26 @@ object frmLogin: TfrmLogin
   Top = 0
   Caption = 'uLogin'
   ClientHeight = 411
-  ClientWidth = 517
+  ClientWidth = 450
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   TextHeight = 15
   object pnlLogin: TPanel
     Left = 0
     Top = 0
-    Width = 517
+    Width = 450
     Height = 411
     Align = alClient
     BevelOuter = bvNone
     Color = 11065007
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitTop = -64
+    ExplicitWidth = 517
     object lblLogin: TLabel
       Left = 89
       Top = 168
@@ -70,7 +70,7 @@ object frmLogin: TfrmLogin
       Caption = 'Vers'#227'o 1.0.0.0'
     end
     object pnlLateralLogin: TPanel
-      Left = 323
+      Left = 256
       Top = 0
       Width = 194
       Height = 411
@@ -79,6 +79,7 @@ object frmLogin: TfrmLogin
       Color = clSilver
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 323
       object imgLateralLogin: TImage
         Left = 0
         Top = 0
@@ -1673,15 +1674,16 @@ object frmLogin: TfrmLogin
           2AFE4F33B1F39D0305BA02E6D5C04CF15AD4E80127DE13178BE4361AA03B459D
           26A89383A70A694AD411AF000A19AE1C8AEC937404C1CB2C1CB0ADF3C2F15487
           9878F9F7E7FF00F70C77F06CD169670000000049454E44AE426082}
-        ExplicitLeft = 24
-        ExplicitWidth = 170
+        ExplicitLeft = 88
+        ExplicitWidth = 106
       end
       object SpeedButton1: TSpeedButton
-        Left = 91
+        Left = 171
         Top = 0
         Width = 23
         Height = 22
         Caption = 'X'
+        Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16

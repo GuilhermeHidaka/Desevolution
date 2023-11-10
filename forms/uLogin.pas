@@ -40,9 +40,15 @@ uses uMenu;
 procedure TfrmLogin.btnEntrarClick(Sender: TObject);
 begin
 if (edtLogin.Text = 'Supervisor') and (edtSenha.Text = 'c3i9e5!#') then
-  frmMenu := TfrmMenu.Create(self);
+begin
+    frmMenu := TfrmMenu.Create(self);
   frmLogin.Hide;
   frmMenu.Show;
+end
+else
+begin
+  ShowMessage('Login ou Senha incorretos!');
+end;
 end;
 
 procedure TfrmLogin.SpeedButton1Click(Sender: TObject);
