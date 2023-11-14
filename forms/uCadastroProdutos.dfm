@@ -1,9 +1,9 @@
-object frmParceiros: TfrmParceiros
+object frmProdutos: TfrmProdutos
   Left = 0
   Top = 0
-  Caption = 'Parceiros'
-  ClientHeight = 410
-  ClientWidth = 662
+  Caption = 'Cadastro Produtos'
+  ClientHeight = 441
+  ClientWidth = 654
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,19 +16,21 @@ object frmParceiros: TfrmParceiros
   object pnlClientesbg: TPanel
     Left = 0
     Top = 0
-    Width = 662
-    Height = 410
+    Width = 654
+    Height = 441
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = -8
     object tps: TPageControl
       Left = 0
       Top = 6
       Width = 651
       Height = 404
-      ActivePage = tbsClientesCadastro
+      ActivePage = tbsProdutosCadastro
       TabOrder = 0
-      object tbsClientesCadastro: TTabSheet
-        Caption = 'Cadastro Parceiros '#55357#56515
+      object tbsProdutosCadastro: TTabSheet
+        Caption = 'Cadastro '#55357#56515
         object pnlTopCadastroClientes: TPanel
           Left = 0
           Top = 0
@@ -39,13 +41,13 @@ object frmParceiros: TfrmParceiros
           Color = clHotLight
           ParentBackground = False
           TabOrder = 0
-          object lblCadastro: TLabel
+          object Label1: TLabel
             Left = 7
             Top = 9
-            Width = 176
+            Width = 177
             Height = 25
-            Caption = 'Cadastro Parceiros :'
-            Font.Charset = ANSI_CHARSET
+            Caption = 'Cadastro Produtos :'
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
             Font.Height = -19
             Font.Name = 'Segoe UI'
@@ -945,12 +947,12 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alRight
                 TabOrder = 0
-                object lblApelido: TLabel
-                  Left = 14
+                object lblReferencia: TLabel
+                  Left = 16
                   Top = 9
-                  Width = 53
+                  Width = 69
                   Height = 17
-                  Caption = 'Apelido :'
+                  Caption = 'Refer'#234'ncia :'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -958,15 +960,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtApelido: TDBEdit
-                  Left = 75
-                  Top = 8
-                  Width = 544
+                object edtReferencia: TDBEdit
+                  Left = 92
+                  Top = 7
+                  Width = 523
                   Height = 23
-                  DataField = 'PAR_APELIDO'
-                  DataSource = dsParceiros
-                  Enabled = False
-                  ImeName = 'edtApelido'
+                  DataField = 'PRO_REF'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -985,12 +985,13 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alRight
                 TabOrder = 0
-                object lblRzs: TLabel
+                ExplicitTop = -2
+                object lblDescricao: TLabel
                   Left = 16
                   Top = 9
-                  Width = 81
+                  Width = 64
                   Height = 17
-                  Caption = 'Raz'#227'o Social :'
+                  Caption = 'Descri'#231#227'o :'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -998,15 +999,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtRzS: TDBEdit
-                  Left = 103
-                  Top = 10
-                  Width = 516
+                object edtDescricao: TDBEdit
+                  Left = 87
+                  Top = 7
+                  Width = 532
                   Height = 23
-                  DataField = 'PAR_RAZAO'
-                  DataSource = dsParceiros
-                  Enabled = False
-                  ImeName = 'edtRzS'
+                  DataField = 'PRO_DESCRICAO'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -1025,12 +1024,12 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alRight
                 TabOrder = 0
-                object lblCPF: TLabel
-                  Left = 14
+                object lblCodBarra: TLabel
+                  Left = 8
                   Top = 9
-                  Width = 30
+                  Width = 105
                   Height = 17
-                  Caption = 'CPF :'
+                  Caption = 'C'#243'digo de Barra :'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -1038,14 +1037,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtCPF: TDBEdit
-                  Left = 50
+                object edtCodBarra: TDBEdit
+                  Left = 120
                   Top = 7
-                  Width = 371
+                  Width = 301
                   Height = 23
-                  DataField = 'PAR_CPF'
-                  DataSource = dsParceiros
-                  Enabled = False
+                  DataField = 'PRO_COD_BARRA'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -1056,7 +1054,9 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alRight
                 TabOrder = 1
-                object lblCod: TLabel
+                ExplicitLeft = -4
+                ExplicitTop = -1
+                object lblProCod: TLabel
                   Left = 16
                   Top = 9
                   Width = 50
@@ -1069,13 +1069,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtParCod: TDBEdit
-                  Left = 72
-                  Top = 8
-                  Width = 105
+                object edtProCod: TDBEdit
+                  Left = 71
+                  Top = 7
+                  Width = 119
                   Height = 23
-                  DataField = 'PAR_COD'
-                  DataSource = dsParceiros
+                  DataField = 'PRO_COD'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -1118,16 +1118,18 @@ object frmParceiros: TfrmParceiros
               object pnlCidade: TPanel
                 Left = 1
                 Top = 1
-                Width = 359
+                Width = 320
                 Height = 38
                 Align = alLeft
                 TabOrder = 0
-                object lblCidade: TLabel
-                  Left = 15
-                  Top = 9
-                  Width = 48
+                ExplicitLeft = -5
+                ExplicitTop = 2
+                object lblVenda: TLabel
+                  Left = 17
+                  Top = 7
+                  Width = 44
                   Height = 17
-                  Caption = 'Cidade :'
+                  Caption = 'Venda :'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -1135,76 +1137,26 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtCidade: TDBEdit
-                  Left = 69
-                  Top = 8
-                  Width = 276
+                object edtVenda: TDBEdit
+                  Left = 67
+                  Top = 6
+                  Width = 232
                   Height = 23
-                  DataField = 'PAR_CIDADE'
-                  DataSource = dsParceiros
-                  Enabled = False
+                  DataField = 'PRO_VENDA'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
               object pnlUF: TPanel
-                Left = 360
+                Left = 321
                 Top = 1
-                Width = 298
+                Width = 312
                 Height = 38
                 Align = alLeft
+                BevelOuter = bvNone
+                Color = clAppWorkSpace
+                ParentBackground = False
                 TabOrder = 1
-                object lblUF: TLabel
-                  Left = 22
-                  Top = 9
-                  Width = 23
-                  Height = 17
-                  Caption = 'UF :'
-                  Font.Charset = ANSI_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -13
-                  Font.Name = 'Segoe UI Semibold'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                end
-                object cbxUF: TDBComboBox
-                  Left = 54
-                  Top = 8
-                  Width = 91
-                  Height = 23
-                  DataField = 'PAR_UF'
-                  DataSource = dsParceiros
-                  Enabled = False
-                  Items.Strings = (
-                    ''
-                    'AC'
-                    'AL'
-                    'AP'
-                    'AM'
-                    'BA'
-                    'CE'
-                    'DF'
-                    'ES'
-                    'GO'
-                    'MA'
-                    'MT'
-                    'MS'
-                    'MG'
-                    'PA'
-                    'PB'
-                    'PR'
-                    'PE'
-                    'PI'
-                    'RJ'
-                    'RN'
-                    'RS'
-                    'RO'
-                    'RR'
-                    'SC'
-                    'SP'
-                    'SE'
-                    'TO')
-                  TabOrder = 0
-                end
               end
             end
             object pnlCelEmail: TPanel
@@ -1221,12 +1173,12 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alLeft
                 TabOrder = 0
-                object c: TLabel
-                  Left = 15
+                object lblEstoqueView: TLabel
+                  Left = 17
                   Top = 9
-                  Width = 48
+                  Width = 56
                   Height = 17
-                  Caption = 'Celular :'
+                  Caption = 'Estoque: '
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -1234,14 +1186,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtCelular: TDBEdit
-                  Left = 69
-                  Top = 8
-                  Width = 212
+                object edtEstoqueView: TDBEdit
+                  Left = 80
+                  Top = 7
+                  Width = 202
                   Height = 23
-                  DataField = 'PAR_CELULAR'
-                  DataSource = dsParceiros
-                  Enabled = False
+                  DataField = 'PRO_ESTOQUE'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -1251,30 +1202,12 @@ object frmParceiros: TfrmParceiros
                 Width = 336
                 Height = 38
                 Align = alLeft
+                BevelOuter = bvNone
+                Color = clAppWorkSpace
+                ParentBackground = False
                 TabOrder = 1
-                object Label7: TLabel
-                  Left = 14
-                  Top = 9
-                  Width = 44
-                  Height = 17
-                  Caption = 'E-mail :'
-                  Font.Charset = ANSI_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -13
-                  Font.Name = 'Segoe UI Semibold'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                end
-                object edtEmail: TDBEdit
-                  Left = 65
-                  Top = 8
-                  Width = 259
-                  Height = 23
-                  DataField = 'PAR_EMAIL'
-                  DataSource = dsParceiros
-                  Enabled = False
-                  TabOrder = 0
-                end
+                ExplicitLeft = 303
+                ExplicitTop = -4
               end
             end
             object pnlDiv1: TPanel
@@ -1301,12 +1234,14 @@ object frmParceiros: TfrmParceiros
                 Height = 38
                 Align = alLeft
                 TabOrder = 0
-                object lblLogradouro: TLabel
-                  Left = 15
+                ExplicitLeft = -5
+                ExplicitTop = 3
+                object lblCompra: TLabel
+                  Left = 17
                   Top = 9
-                  Width = 78
+                  Width = 55
                   Height = 17
-                  Caption = 'Logradouro :'
+                  Caption = 'Compra :'
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -13
@@ -1314,14 +1249,13 @@ object frmParceiros: TfrmParceiros
                   Font.Style = [fsBold]
                   ParentFont = False
                 end
-                object edtLogradouro: TDBEdit
-                  Left = 99
-                  Top = 8
-                  Width = 215
+                object edtCompra: TDBEdit
+                  Left = 80
+                  Top = 6
+                  Width = 216
                   Height = 23
-                  DataField = 'PAR_LOGRADOURO'
-                  DataSource = dsParceiros
-                  Enabled = False
+                  DataField = 'PRO_COMPRA'
+                  DataSource = dsProdutos
                   TabOrder = 0
                 end
               end
@@ -1331,31 +1265,10 @@ object frmParceiros: TfrmParceiros
                 Width = 319
                 Height = 38
                 Align = alLeft
+                BevelOuter = bvNone
+                Color = clAppWorkSpace
+                ParentBackground = False
                 TabOrder = 1
-                object lblBairro: TLabel
-                  Left = 13
-                  Top = 9
-                  Width = 43
-                  Height = 17
-                  Caption = 'Bairro :'
-                  Font.Charset = ANSI_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -13
-                  Font.Name = 'Segoe UI Semibold'
-                  Font.Style = [fsBold]
-                  ParentFont = False
-                end
-                object edtBairro: TDBEdit
-                  Left = 61
-                  Top = 8
-                  Width = 239
-                  Height = 23
-                  DataField = 'PAR_BAIRRO'
-                  DataSource = dsParceiros
-                  Enabled = False
-                  ImeName = 'Portuguese (Brazilian ABNT)'
-                  TabOrder = 0
-                end
               end
             end
             object pnlBottom: TPanel
@@ -1509,16 +1422,12 @@ object frmParceiros: TfrmParceiros
                 TabOrder = 0
                 OnClick = btnVoltarClick
               end
-              object Memo1: TMemo
+              object Memo2: TMemo
                 Left = 112
                 Top = 0
                 Width = 185
                 Height = 89
                 Lines.Strings = (
-                  ''
-                  ''
-                  ''
-                  ''
                   ''
                   ''
                   ''
@@ -1532,10 +1441,14 @@ object frmParceiros: TfrmParceiros
           end
         end
       end
+      object tbsProdutoEstoque: TTabSheet
+        Caption = ' Estoque '#55357#56385#65039
+        ImageIndex = 1
+      end
     end
   end
-  object dsParceiros: TDataSource
-    DataSet = DM.Parceiros
+  object dsProdutos: TDataSource
+    DataSet = DM.Produtos
     Left = 224
   end
 end

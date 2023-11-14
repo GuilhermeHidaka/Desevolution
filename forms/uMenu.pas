@@ -19,8 +19,8 @@ type
     SpeedButton1: TSpeedButton;
     BitBtn1: TBitBtn;
     procedure SpeedButton1Click(Sender: TObject);
-    procedure btnClientesClick(Sender: TObject);
     procedure btnParceirosClick(Sender: TObject);
+    procedure btnProdutosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,13 +34,19 @@ implementation
 
 {$R *.dfm}
 
-uses uClientes;
-
+uses uClientes, uCadastroProdutos;
 
 procedure TfrmMenu.btnParceirosClick(Sender: TObject);
 begin
-frmParceiros := TfrmParceiros.Create(self);
+  frmParceiros := TfrmParceiros.Create(self);
   frmParceiros.Show;
+  frmMenu.Hide;
+end;
+
+procedure TfrmMenu.btnProdutosClick(Sender: TObject);
+begin
+  frmProdutos := TfrmProdutos.Create(self);
+  frmProdutos.Show;
   frmMenu.Hide;
 end;
 

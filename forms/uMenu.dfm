@@ -2165,7 +2165,7 @@ object frmMenu: TfrmMenu
       Height = 408
       Align = alLeft
       BevelOuter = bvNone
-      Color = 11065007
+      Color = clHotLight
       ParentBackground = False
       TabOrder = 0
       object btnRealtorios: TBitBtn
@@ -2215,6 +2215,7 @@ object frmMenu: TfrmMenu
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 2
+        OnClick = btnProdutosClick
       end
       object btnParceiros: TBitBtn
         AlignWithMargins = True

@@ -87,10 +87,10 @@ object DM: TDM
     Left = 216
     Top = 72
     object ProdutosPRO_COD: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'PRO_COD'
       Origin = 'PRO_COD'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
     end
     object ProdutosPRO_DESCRICAO: TStringField
       FieldName = 'PRO_DESCRICAO'

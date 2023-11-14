@@ -3,25 +3,25 @@ unit uLogin;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   Vcl.Imaging.pngimage, Vcl.Buttons;
 
 type
   TfrmLogin = class(TForm)
     pnlLogin: TPanel;
-    lblLogin: TLabel;
-    lblSenha: TLabel;
-    pnlLateralLogin: TPanel;
-    lblTitulo: TLabel;
+    imgLogin: TImage;
+    btnEntrar: TButton;
+    btnFechar: TSpeedButton;
     edtLogin: TEdit;
     edtSenha: TEdit;
+    lblLogin: TLabel;
+    lblSenha: TLabel;
+    lblTitulo: TLabel;
     lblVersao: TLabel;
-    btnEntrar: TButton;
-    imgLateralLogin: TImage;
-    SpeedButton1: TSpeedButton;
     procedure btnEntrarClick(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,21 +39,21 @@ uses uMenu;
 
 procedure TfrmLogin.btnEntrarClick(Sender: TObject);
 begin
-if (edtLogin.Text = 'Supervisor') and (edtSenha.Text = 'c3i9e5!#') then
-begin
+  if (edtLogin.Text = 'Supervisor') and (edtSenha.Text = 'c3i9e5!#') then
+  begin
     frmMenu := TfrmMenu.Create(self);
-  frmLogin.Hide;
-  frmMenu.Show;
-end
-else
-begin
-  ShowMessage('Login ou Senha incorretos!');
-end;
+    frmLogin.Hide;
+    frmMenu.Show;
+  end
+  else
+  begin
+    ShowMessage('Login ou Senha incorretos!');
+  end;
 end;
 
-procedure TfrmLogin.SpeedButton1Click(Sender: TObject);
+procedure TfrmLogin.btnFecharClick(Sender: TObject);
 begin
-Application.Terminate;
+  Application.Terminate;
 end;
 
 end.

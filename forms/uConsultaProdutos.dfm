@@ -1,36 +1,39 @@
-object frmConsultaParceiros: TfrmConsultaParceiros
+object frmConsultaProdutos: TfrmConsultaProdutos
   Left = 0
   Top = 0
-  Caption = 'Consulta Parceiros'
-  ClientHeight = 463
-  ClientWidth = 725
+  Caption = 'Consulta Produtos'
+  ClientHeight = 447
+  ClientWidth = 709
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesktopCenter
-  OnCreate = FormCreate
   TextHeight = 15
   object pnlBG: TPanel
     Left = 0
     Top = 0
-    Width = 725
-    Height = 463
+    Width = 709
+    Height = 447
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = -101
+    ExplicitTop = -22
+    ExplicitWidth = 725
+    ExplicitHeight = 463
     object pnlTopCOnsulta: TPanel
       AlignWithMargins = True
       Left = 4
       Top = 20
-      Width = 717
+      Width = 701
       Height = 40
       Align = alTop
       Color = clHotLight
       ParentBackground = False
       TabOrder = 0
-      object cbxCampoConsulta: TComboBox
+      ExplicitWidth = 717
+      object cbxCampoConsultaProdutos: TComboBox
         Left = 16
         Top = 9
         Width = 105
@@ -39,11 +42,9 @@ object frmConsultaParceiros: TfrmConsultaParceiros
         Items.Strings = (
           ''
           'C'#243'digo'
-          'CPF'
-          'Apelido'
-          'Razao'
-          'Email'
-          'Celular')
+          'Descri'#231#227'o'
+          'Refer'#234'ncia'
+          'C'#243'digo de Barras')
       end
       object edtBuscaConsulta: TEdit
         Left = 127
@@ -204,90 +205,39 @@ object frmConsultaParceiros: TfrmConsultaParceiros
       AlignWithMargins = True
       Left = 4
       Top = 66
-      Width = 717
-      Height = 393
+      Width = 701
+      Height = 377
       Align = alClient
       TabOrder = 1
-      object DBGridConsulta: TDBGrid
-        AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 709
-        Height = 385
+      ExplicitWidth = 717
+      ExplicitHeight = 393
+      object DBGrid1: TDBGrid
+        Left = 1
+        Top = 1
+        Width = 699
+        Height = 375
         Align = alClient
-        DataSource = dsParceiros
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        DataSource = dsProdutos
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
-        OnDblClick = DBGridConsultaDblClick
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'PAR_COD'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_CPF'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_RAZAO'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_APELIDO'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_EMAIL'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_CELULAR'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_BAIRRO'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_LOGRADOURO'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_CIDADE'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PAR_UF'
-            Visible = True
-          end>
       end
     end
     object Panel1: TPanel
       Left = 1
       Top = 1
-      Width = 723
+      Width = 707
       Height = 16
       Align = alTop
       Color = clSilver
       ParentBackground = False
       TabOrder = 2
+      ExplicitWidth = 723
       object SpeedButton1: TSpeedButton
-        Left = 699
+        Left = 683
         Top = 1
         Width = 23
         Height = 14
@@ -307,9 +257,9 @@ object frmConsultaParceiros: TfrmConsultaParceiros
       end
     end
   end
-  object dsParceiros: TDataSource
-    DataSet = DM.Parceiros
-    Left = 672
-    Top = 24
+  object dsProdutos: TDataSource
+    DataSet = DM.Produtos
+    Left = 660
+    Top = 20
   end
 end

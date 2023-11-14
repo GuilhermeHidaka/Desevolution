@@ -9,7 +9,7 @@ uses
   Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.Buttons;
 
 type
-  TfrmConsulta = class(TForm)
+  TfrmConsultaParceiros = class(TForm)
     pnlBG: TPanel;
     pnlTopCOnsulta: TPanel;
     pnlDBgrid: TPanel;
@@ -31,7 +31,7 @@ type
   end;
 
 var
-  frmConsulta: TfrmConsulta;
+  frmConsultaParceiros: TfrmConsultaParceiros;
 
 implementation
 
@@ -39,29 +39,29 @@ implementation
 
 uses uClientes, uDM;
 
-procedure TfrmConsulta.BitBtn1Click(Sender: TObject);
+procedure TfrmConsultaParceiros.BitBtn1Click(Sender: TObject);
 begin
-  //par_cod
+  // !!!
   if cbxCampoConsulta.ItemIndex = 0 then
+  begin
+    ShowMessage('Selecione um Filtro Válido!!!');
+  end;
+
+  // par_cod
+  if cbxCampoConsulta.ItemIndex = 1 then
   begin
     DM.Parceiros.Locate('PAR_COD', edtBuscaConsulta.Text,
       [loPartialKey, loCaseInsensitive]);
   end;
 
-  //PAR_CPF
-  if cbxCampoConsulta.ItemIndex = 1 then
+  // PAR_CPF
+  if cbxCampoConsulta.ItemIndex = 2 then
   begin
     DM.Parceiros.Locate('PAR_CPF', edtBuscaConsulta.Text,
       [loPartialKey, loCaseInsensitive]);
   end;
 
-  //para razao
-  if cbxCampoConsulta.ItemIndex = 2 then
-  begin
-    DM.Parceiros.Locate('PAR_RAZAO', edtBuscaConsulta.Text,
-      [loPartialKey, loCaseInsensitive]);
-  end;
-
+  // para razao
   if cbxCampoConsulta.ItemIndex = 3 then
   begin
     DM.Parceiros.Locate('PAR_APELIDO', edtBuscaConsulta.Text,
@@ -70,45 +70,51 @@ begin
 
   if cbxCampoConsulta.ItemIndex = 4 then
   begin
-    DM.Parceiros.Locate('PAR_EMAIL', edtBuscaConsulta.Text,
+    DM.Parceiros.Locate('PAR_RAZAO', edtBuscaConsulta.Text,
       [loPartialKey, loCaseInsensitive]);
   end;
 
   if cbxCampoConsulta.ItemIndex = 5 then
   begin
+    DM.Parceiros.Locate('PAR_EMAIL', edtBuscaConsulta.Text,
+      [loPartialKey, loCaseInsensitive]);
+  end;
+
+  if cbxCampoConsulta.ItemIndex = 6 then
+  begin
     DM.Parceiros.Locate('PAR_CELULAR', edtBuscaConsulta.Text,
       [loPartialKey, loCaseInsensitive]);
   end;
 
-(*
-0 - Código
-1 - CPF
-2 - Apelido
-3 - Razao
-4 - Email
-5 - Celular
-6 - Bairro
-7 - Logradouro
-8 - Cidade
-9 - UF
-*)
+  (*
+    0 - Código
+    1 - CPF
+    2 - Apelido
+    3 - Razao
+    4 - Email
+    5 - Celular
+    6 - Bairro
+    7 - Logradouro
+    8 - Cidade
+    9 - UF
+  *)
 end;
 
-procedure TfrmConsulta.DBGridConsultaDblClick(Sender: TObject);
+procedure TfrmConsultaParceiros.DBGridConsultaDblClick(Sender: TObject);
 begin
-  frmConsulta.Hide;
+  frmConsultaParceiros.Hide;
   // ocultar db click
   frmParceiros.Show;
 end;
 
-procedure TfrmConsulta.FormCreate(Sender: TObject);
+procedure TfrmConsultaParceiros.FormCreate(Sender: TObject);
 begin
-cbxCampoConsulta.ItemIndex:=0;
+  cbxCampoConsulta.ItemIndex := 0;
 end;
 
-procedure TfrmConsulta.SpeedButton1Click(Sender: TObject);
+procedure TfrmConsultaParceiros.SpeedButton1Click(Sender: TObject);
 begin
-  frmConsulta.Hide;
+  frmConsultaParceiros.Hide;
   // close
   frmParceiros.Show;
 end;

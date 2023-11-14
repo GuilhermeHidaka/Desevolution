@@ -175,8 +175,8 @@ end;
 
 procedure TfrmParceiros.btnPesquisaClick(Sender: TObject);
 begin
-  frmConsulta := TfrmConsulta.Create(self);
-  frmConsulta.Show;
+  frmConsultaParceiros := TfrmConsultaParceiros.Create(self);
+  frmConsultaParceiros.Show;
 end;
 
 procedure TfrmParceiros.btnSalvarClick(Sender: TObject);
@@ -308,6 +308,7 @@ begin
       Memo1.Lines[8] := 'UF = VAZIO!'
     end;
 
+    // memo1..........................................................................................................................
     listaLines := TStringList.Create;
     try
       listaLines.Assign(Memo1.Lines);
@@ -328,6 +329,7 @@ end;
 
 procedure TfrmParceiros.FormCreate(Sender: TObject);
 begin
+  edtParCod.Enabled := false;
   btnSalvar.Enabled := false;
   btnCancel.Enabled := false;
   cbxUF.ItemIndex := 0;
